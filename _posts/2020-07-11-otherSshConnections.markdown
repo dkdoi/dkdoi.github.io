@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Other ssh connections"
+title: "other ssh connections"
 description: 서로다른 SSH 연결
 date: 2020-07-11 13:10:00 +0900
 categories: SSH DOCKER

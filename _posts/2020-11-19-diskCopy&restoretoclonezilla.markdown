@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "diskCopy&restore to clonezilla"
+title: "diskcopy&restore to clonezilla"
 description: 클론질라 를 이용한 디스크 전체 카피 및 복구
 date: 2020-11-19 09:10:00 +0900
 categories: Clonezilla

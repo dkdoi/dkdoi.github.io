@@ -1,0 +1,49 @@
+I"<p>이번엔 폐쇄망에서의 Docker 구축을 해볼일이생겼다.</p>
+
+<ol>
+  <li>wget 설치</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  yum install wget &amp; sudo yum install wget
+</code></pre></div></div>
+
+<ol>
+  <li>버젼의 맞는 파일 다운로드</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget --recursive --no-parent http://ftp.kaist.ac.kr/CentOS/7/extras/x86_64/
+  --recursive (폴더 하위에 있는 파일들 모두 다운로드)
+  --no-parent (상위폴더 무시 다운로드 X)
+</code></pre></div></div>
+
+<ol>
+  <li>다운로드뒤 폐쇄망으로 파일 이전</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>나같은경우에는 SCP 를 이용하였다.
+scp -r ./ftp.kaist.ac.kr/CentOS/7/extras/x86_64/ serverName@0.0.0.0:/설치할경로
+mv x86_64 kaistrepo
+</code></pre></div></div>
+
+<ol>
+  <li>폐쇄망 작업</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su
+cd /etc/yum.repos.d
+vi kaist.repo
+그다음 아래의사진과같이 입력한다.
+</code></pre></div></div>
+
+<p><img src="/capture/closednetDocker/closedDocker.JPG" alt="" /></p>
+
+<ol>
+  <li>yum repo reload</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum clean all
+yum repolist all
+</code></pre></div></div>
+
+<p>6.</p>
+:ET

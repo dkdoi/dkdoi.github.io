@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "https & nginx Settings"
+title: "https & nginx settings"
 description: https 인증서 발급 및 적용 + nginx
 date: 2021-01-27 09:10:00 +0900
 categories: nginx https letsencrypt certbot crontab
