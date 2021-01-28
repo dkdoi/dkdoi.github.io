@@ -1,5 +1,0 @@
-I"<p>./capture/diskCopy/KakaoTalk_20201119_104134509.jpg
-두개의 컨테이너 간의 SSH 연결하여 shell 파일을 실행하고자 하였다.
-그러기위해 선행 작업으로는 docker container 2개를 생성한다.
-<img src="https://i.esdrop.com/d/ZklKfna5T3.jpg" alt="" /></p>
-:ET
