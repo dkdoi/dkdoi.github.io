@@ -72,6 +72,7 @@ systemctl start docker
 ```
 2021-02-01 추가
 다른 곳의 테스트중 root 권한 일때만 docker 명령어가 실행이 되었다.
+이런상황이 있을때의 명령어는 아래와같다.
 #Debian
 sudo usermod -a -G docker $USER
 
