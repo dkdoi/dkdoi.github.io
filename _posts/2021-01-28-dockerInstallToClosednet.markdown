@@ -68,3 +68,10 @@ systemctl start docker
 해결~
 이제 폐쇄망에서의 docker 가 가능해졌다~
 ```
+
+```
+2021-02-01 추가
+다른 곳의 테스트중 root 권한 일때만 docker 명령어가 실행이 되었다.
+그럴때는 sudo usermod -a -G docker $USER 입력하면된다.
+수도권한없이 doker 명령어를 쓸때의 명령이다.
+```
