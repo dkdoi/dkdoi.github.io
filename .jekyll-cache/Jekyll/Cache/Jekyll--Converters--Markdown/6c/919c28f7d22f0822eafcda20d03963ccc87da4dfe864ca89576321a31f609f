@@ -1,9 +1,0 @@
-I"<p>이번엔 폐쇄망에서의 Docker 구축을 해볼일이생겼다.</p>
-
-<ol>
-  <li>wget 설치</li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  yum install wget or sudo yum install wget
-</code></pre></div></div>
-:ET

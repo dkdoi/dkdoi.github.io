@@ -1,4 +1,4 @@
-I"�	<p>이번엔 폐쇄망에서의 Docker 구축을 해볼일이생겼다.</p>
+I"�<p>이번엔 폐쇄망에서의 Docker 구축을 해볼일이생겼다.</p>
 
 <p>1.wget 설치</p>
 
@@ -48,10 +48,44 @@ yum install -y docker</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>하지만 난바로 설치가 되지 않음.....
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? 이러한 오류가 떳다..그래서 검색을해보니
-
 systemctl enable docker
 systemctl start docker
 해결~
 이제 폐쇄망에서의 docker 가 가능해졌다~
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-02-01 추가
+다른 곳의 테스트중 root 권한 일때만 docker 명령어가 실행이 되었다.
+이런상황이 있을때의 명령어는 아래와같다.
+#Debian
+sudo usermod -a -G docker $USER
+
+#Centos
+sudo groupadd docker
+sudo chown root:docker /var/run/docker.sock
+sudo usermod -aG docker $USER
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-03-02추가
+docker-compose 오프라인 설치
+1. wget https://github.com/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64
+
+2. 패키지 이름변경
+mv docker-compose-Linux-x86_64 docker-compose
+
+3. 폐쇄망으로 구축된 서버로 복사
+
+4. 실행할수있도록 설정
+mv docker-compose /usr/local/bin/
+chmod +x /usr/local/bin/docker-compose
+
+5.실행확인
+docker-compose -version
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-03-02
+docker image 폐쇄망적용방법
+docker save -o {dockerimageName}.tar {dockerimage} (인터넷O)
+docker load -i {dockerimageName}.tar (인터넷X)
 </code></pre></div></div>
 :ET

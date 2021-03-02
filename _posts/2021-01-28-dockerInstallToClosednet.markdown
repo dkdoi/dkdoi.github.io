@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "docker install to closednet"
-description: 폐쇄망에서의Docker 설치
+description: 폐쇄망에서의Docker 설치 부터 compose 까지
 date: 2021-01-28 13:10:00 +0900
 categories: SSH DOCKER CentOS7
 ---
@@ -80,4 +80,29 @@ sudo usermod -a -G docker $USER
 sudo groupadd docker
 sudo chown root:docker /var/run/docker.sock
 sudo usermod -aG docker $USER
+```
+
+```
+2021-03-02추가
+docker-compose 오프라인 설치
+1. wget https://github.com/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64
+
+2. 패키지 이름변경
+mv docker-compose-Linux-x86_64 docker-compose
+
+3. 폐쇄망으로 구축된 서버로 복사
+
+4. 실행할수있도록 설정
+mv docker-compose /usr/local/bin/
+chmod +x /usr/local/bin/docker-compose
+
+5.실행확인
+docker-compose -version
+```
+
+```
+2021-03-02
+docker image 폐쇄망적용방법
+docker save -o {dockerimageName}.tar {dockerimage} (인터넷O)
+docker load -i {dockerimageName}.tar (인터넷X)
 ```
